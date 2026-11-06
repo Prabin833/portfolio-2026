@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* =================================
+   VINTAGE NOTEBOOK THEME
+================================= */
+
+:root {
+  --paper-color: #f8f3e7;
+  --ink-color: #29251f;
+  --line-color: rgba(104, 155, 190, 0.35);
+  --margin-color: rgba(211, 91, 80, 0.55);
+
+  /* Retro Google Fonts */
+  --font-heading: "Caveat", cursive;
+  --font-handwriting: "Kalam", cursive;
+  --font-typewriter: "Special Elite", monospace;
+  --font-body: "Kalam", cursive;
+}
+
+/* =================================
+   GLOBAL RESET
+================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background-color: var(--paper-color);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  color: var(--ink-color);
+  background-color: var(--paper-color);
+
+  /* Horizontal notebook lines */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 35px,
+    var(--line-color) 35px,
+    var(--line-color) 36px
+  );
+
+  background-attachment: local;
+
+  /* Default website font */
+  font-family: var(--font-body);
+}
+
+/* =================================
+   RETRO TYPOGRAPHY
+================================= */
+
+/* Large handwritten headings */
+.font-retro-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+/* Handwritten buttons and labels */
+.font-retro-handwriting {
+  font-family: var(--font-handwriting);
+  font-weight: 400;
+}
+
+/* Vintage typewriter labels */
+.font-retro-typewriter {
+  font-family: var(--font-typewriter);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Body text */
+.font-retro-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+}
+
+
+#root::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Keep website content above the decorative effects */
+#root > * {
+  position: relative;
+}
+
+/* =================================
+   TEXT SELECTION
+================================= */
+
+::selection {
+  background-color: #d96b43;
+  color: #fffdf5;
+}
+
+/* =================================
+   RESPONSIVE NOTEBOOK MARGIN
+================================= */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+  #root::before {
+    left: 55px;
+  }
+}
+
+/* Mobile landscape and tablets */
+@media (max-width: 768px) {
+  #root::before {
+    left: 35px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  #root::before {
+    left: 20px;
+    width: 1.5px;
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 360px) {
+  #root::before {
+    left: 14px;
+    width: 1px;
+  }
+}
