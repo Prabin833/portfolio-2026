@@ -48,7 +48,7 @@ const projects = [
     accent: "#557f85",
     rotation: "-rotate-[0.5deg]",
     tags: ["React", "Tailwind CSS", "JavaScript", "GSAP", "Locomotive Scroll"],
-    liveUrl: "https://prabin.website/",
+    liveUrl: "https://webstoniez.online/",
     githubUrl: "https://github.com/Prabin833/portfolio-",
   },
 ];
@@ -96,9 +96,7 @@ const Projects = () => {
               key={project.id}
               className={`grid min-w-0 grid-cols-1 items-center gap-7 md:grid-cols-2 md:gap-8 lg:gap-12 ${project.rotation}`}
             >
-              {/* Project Visual */}
               <div className="min-w-0">
-                {/* Hover effects are restricted to this visual card */}
                 <div className="relative min-w-0 rounded-sm border border-[#d8cdb8] bg-[#fffaf0] p-2 shadow-[4px_5px_0_rgba(41,37,31,0.08)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[8px_10px_0_rgba(41,37,31,0.12)] sm:p-3">
                   {/* Browser Header */}
                   <div className="flex h-9 min-w-0 items-center gap-1.5 border-b border-[#e7ddcb] px-1 sm:px-2">
@@ -111,7 +109,6 @@ const Projects = () => {
                     </span>
                   </div>
 
-                  {/* Video or Screenshot */}
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#eee5d5]">
                     {project.imageType === "video" ? (
                       <video
